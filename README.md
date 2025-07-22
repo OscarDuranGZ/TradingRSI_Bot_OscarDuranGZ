@@ -1,51 +1,51 @@
-# 📈 TradingRSI Notifier – Telegram Bot for Bitcoin Alerts
+# 🧠 TradingRSI Notifier
 
-> ⚠️ This repository is **private** and intended for **demonstration purposes only**. Please do not redistribute or reuse without prior permission.
+A Telegram bot that sends smart, data-driven alerts about Bitcoin market conditions based on weekly RSI and price drop signals. Built in Python, connected to the Binance API.
 
-## 🔍 Overview
+## 📊 Project Overview
 
-TradingRSI Notifier is a custom-built Telegram bot designed to notify users when Bitcoin (BTC) hits **oversold RSI levels** or **drops significantly below its all-time high**, using real-time data from the Binance API.
+This bot monitors the **weekly RSI (Relative Strength Index)** of Bitcoin and its **current price in EUR** compared to its **all-time high**, sending real-time alerts to subscribed Telegram users when strategic buying opportunities arise:
 
-This project was created as a personal solution for automated monitoring of long-term entry opportunities in BTC, based on two key indicators:
+- ✅ Sends alerts when **RSI is below 20** (oversold zone).
+- ✅ Notifies when **BTC drops more than 50%** from its all-time high.
+- ✅ Designed for long-term investors using **DCA (Dollar Cost Averaging)** strategies.
 
-- **RSI (Relative Strength Index) Weekly < 20**
-- **Price drop ≥ 50% from ATH**
+## 💡 Key Features
 
-## ⚙️ Key Features
+- 📈 Uses **Binance API** to retrieve historical candlestick data.
+- 🤖 Sends messages via **Telegram Bot API** using `python-telegram-bot`.
+- 🔧 Modular config with external `.json` files for easy threshold tuning and user management.
+- 🧪 Can run on a scheduler (e.g., every 5 minutes via Task Scheduler or Cron).
+- 🔐 Includes access control and `/start` listener for future user validation/payment flow.
 
-- 📲 **Telegram notifications** to registered users
-- 🔄 **Automated weekly RSI and price checks** using Binance data
-- 📉 **Configurable RSI thresholds and ATH price levels**
-- ✅ Uses `asyncio` for efficient bot operations
-- 🔐 Manual access control via `usuarios.json`
+## 🛠️ Technologies Used
 
-## 🧠 How It Works
+- Python 3.10+
+- pandas
+- python-binance
+- python-telegram-bot (HTTPXRequest)
+- asyncio
+- JSON for config and user data
 
-1. The bot fetches weekly BTC/EUR candle data via Binance API.
-2. It calculates RSI values and compares the current price to the ATH threshold.
-3. If any condition is met (RSI < 20 or price < -50%), it sends an alert via Telegram to the registered users.
-4. Users must be pre-registered manually or via a secure `/start` access system.
+## 📦 Project Structure
 
-## 🛠 Tech Stack
+📁 TradingRSI_Bot
+├── main_telegram.py # Main script that runs the alerts
+├── listener_start.py # Optional: Listens for /start command from Telegram
+├── configbtc.json # Configuration for RSI/price thresholds
+├── usuarios.json # List of allowed Telegram user IDs
+├── log.txt # Log file with all messages and errors
 
-- Python 3.11+
-- Binance API (via `python-binance`)
-- Telegram Bot API (via `python-telegram-bot`)
-- Pandas for data analysis
-- Asyncio for async task management
+## 🚀 Potential Use Cases
 
-## 🔐 Access & Usage
+- Personal Bitcoin investment tracking
+- Alert tool for crypto traders
+- Integration with premium access or paid memberships (Stripe-compatible)
 
-This repository contains proprietary code and logic and is **not open-source**. It is shared **only for technical evaluation and project demonstration**.
+## ⚠️ Disclaimer
 
-If you'd like to learn more about the implementation or see a live demo:
-- 📩 Contact me directly for temporary access.
-- 🎥 Or request a recorded video showing the bot in action.
+This project is for educational and personal use. It is not financial advice. Use at your own discretion and always verify trading signals manually.
 
-## 📌 Motivation
+---
 
-This bot was born from a personal need to monitor ideal buying conditions for long-term BTC investments. It aims to reduce emotional decision-making by using strict, data-driven alerts.
-
-## 📎 License & Permissions
-
-📫 **For inquiries or to request a private demo**, feel free to contact me via LinkedIn or email.
+If you're interested in seeing the code or testing the bot, feel free to contact me.
