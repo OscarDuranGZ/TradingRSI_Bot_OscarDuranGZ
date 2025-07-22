@@ -30,6 +30,7 @@ This bot monitors the **weekly RSI (Relative Strength Index)** of Bitcoin and it
 ## 📦 Project Structure
 
 📁 TradingRSI_Bot
+
 ├── main_telegram.py # Main script that runs the alerts
 
 ├── listener_start.py # Optional: Listens for /start command from Telegram
